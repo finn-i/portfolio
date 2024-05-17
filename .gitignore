@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+src/assets/models/stag-idle.glb
+src/assets/models/stag-idle.gltf
+src/assets/models/stag-walking.glb
