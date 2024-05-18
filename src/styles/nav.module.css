@@ -1,0 +1,9 @@
+.navContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 100vw;
+  background-color: white;
+  color: black;
+}

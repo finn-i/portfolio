@@ -1,6 +1,7 @@
 import ReactFullpage from '@fullpage/react-fullpage';
 import Scene from './components/Scene';
 import styles from './styles/root.module.css';
+import Nav from './components/Nav';
 
 const Root = () => {
 
@@ -18,6 +19,7 @@ const Root = () => {
         render={({  }) => {
           return (
             <ReactFullpage.Wrapper>
+              <Nav />
               <div className="section">
                 <Scene />
               </div>
