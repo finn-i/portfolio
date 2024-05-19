@@ -16,11 +16,11 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-y: hidden !important; /* force hide scroll bar (unfortunately needed for scroll handling with fullpage) */
 }
 
 .main {
-  
+
 }
 
 .section {

@@ -7,6 +7,8 @@ const Root = () => {
 
   return (
     <div className={styles.main}>
+      <Nav />
+      <Scene />
       <ReactFullpage
         licenseKey={"gplv3-license"}
         anchors={["home", "about", "work", "contact"]}
@@ -16,12 +18,13 @@ const Root = () => {
         touchSensitivity={15}
         keyboardScrolling={true}
         credits={{ enabled: true }}
+        scrollBar={true}
         render={({  }) => {
           return (
             <ReactFullpage.Wrapper>
-              <Nav />
               <div className="section">
-                <Scene />
+                {/* <Home /> */}
+                asd
               </div>
               <div className="section">
                 {/* <About /> */}
@@ -36,7 +39,6 @@ const Root = () => {
           );
         }}
       />
-      {/* <Scene /> */}
     </div>
   )
 }
