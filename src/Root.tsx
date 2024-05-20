@@ -1,7 +1,10 @@
 import ReactFullpage from '@fullpage/react-fullpage';
-import Scene from './components/Scene';
 import styles from './styles/root.module.css';
+import Scene from './components/Scene';
 import Nav from './components/Nav';
+import Home from './components/Home';
+import About from './components/About';
+import Experience from './components/Experience';
 
 const Root = () => {
 
@@ -11,7 +14,7 @@ const Root = () => {
       <Scene />
       <ReactFullpage
         licenseKey={"gplv3-license"}
-        anchors={["home", "about", "work", "contact"]}
+        anchors={["home", "about", "exp", "contact"]}
         navigation // shows navigation circles
         scrollingSpeed={700}
         dragAndMove={"vertical"}
@@ -22,17 +25,16 @@ const Root = () => {
         render={({  }) => {
           return (
             <ReactFullpage.Wrapper>
-              <div className="section">
-                {/* <Home /> */}
-                asd
+              <div className={`section ${styles.section}`}>
+                <Home />
               </div>
-              <div className="section">
-                {/* <About /> */}
+              <div className={`section ${styles.section}`}>
+                <About />
               </div>
-              <div className="section">
-                {/* <Work /> */}
+              <div className={`section ${styles.section}`}>
+                <Experience />
               </div>
-              <div className="section">
+              <div className={`section ${styles.section}`}>
                 {/* <Contact /> */}
               </div>
             </ReactFullpage.Wrapper>
