@@ -1,7 +1,7 @@
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import styles from '../styles/scene.module.css';
 import { useRef, useState } from 'react';
-import { Points, PointMaterial, ScrollControls } from '@react-three/drei';
+import { Points, PointMaterial } from '@react-three/drei';
 import { inSphere } from 'maath/random';
 import { Euler } from 'three';
 import  { useScroll } from 'framer-motion';
@@ -9,7 +9,7 @@ import  { useScroll } from 'framer-motion';
 const Scene = () => {
   return (
     <div className={styles.canvasContainer}>
-      <Canvas camera={{position: [0.25, 0, 1] }}>
+      <Canvas camera={{position: [0, 0, 1] }}>
         <Stars /> 
       </Canvas>
     </div>
@@ -46,7 +46,7 @@ const Stars = () =>  {
   return (
     <group rotation={rotation}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} >
-        <PointMaterial transparent color={"0xF0EDCC"} size={0.004} sizeAttenuation={true} depthWrite={false} />
+        <PointMaterial transparent color={"rgb(0, 150, 250)"} size={0.002} sizeAttenuation={true} depthWrite={false} />
       </Points>
     </group>
   )

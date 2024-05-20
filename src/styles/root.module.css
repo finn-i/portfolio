@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #F0EDCC;
   background-color: #0c1817;
 
   font-synthesis: none;
@@ -16,14 +16,40 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow-y: hidden !important; /* force hide scroll bar (unfortunately needed for scroll handling with fullpage) */
+  overflow-y: hidden !important; /* unfortunately needed for scroll handling with react-fullpage */
 }
 
 .main {
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section {
   width: 100vw;
   height: 100vh;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Ojuju', sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
+  padding-bottom: 5vh;
+}
+
+.overview {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
 }

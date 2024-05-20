@@ -1,0 +1,68 @@
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow-y: hidden;
+  padding: 10rem;
+}
+
+.card {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240px;
+  height: 280px;
+  background-color: #0a1414;
+  padding: 1rem;
+  border-radius: 5%;
+  img {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    width: 75%;
+  }  
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.card:hover {
+  box-shadow: 0 0 0.5rem #F0EDCC;
+}
+
+h2 {
+  margin: 0;
+  text-align: center;
+}
+a {
+  margin-left: 0.5rem;
+  color: #F0EDCC;
+  :hover {
+    color: #9c9b83;
+  }
+}
+
+
+.stackContainer {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  
+  .chip {
+    color: rgb(150, 150, 255);
+    border: 1px solid rgb(150, 150, 255);
+    /* border-radius: 10%; */
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    margin-right: 0.5rem;
+  }
+}
