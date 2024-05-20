@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   height: 5vh;
   width: 100%;
   z-index: 10;
@@ -10,4 +11,24 @@
   color: "#F0EDCC";
   position: fixed;
   top: 0;
+  a {
+    text-decoration: none;
+  }
 } 
+
+.navTitle {
+  font-family: 'Ojuju', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  position: absolute;
+  left: 1rem;
+}
+
+.navItem {
+  font-size: 1.1rem;
+  border-bottom: 1px solid transparent;
+}
+
+.navItem:hover {
+  border-bottom: 1px solid #F0EDCC;
+}
