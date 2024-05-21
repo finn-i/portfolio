@@ -9,7 +9,6 @@ export const projects = [
   {
     title: "Web Developer",
     description: "Site maintenance for Newstead Country Preschool updating content and plugins.",
-    link: "https://newsteadcountrypreschool.co.nz",
     img: "./src/assets/ncp.png",
     stack: ["wordpress"]
   },
@@ -42,3 +41,9 @@ export const projects = [
     stack: ["adobe suite"]
   },
 ]
+
+export const theme = {
+  primary: "#0C1817",
+  secondary: "#F0EDCC",
+  accent: "rgb(250, 0, 150)"
+}
