@@ -24,8 +24,8 @@ const Experience = () => {
       hidden: { opacity: 0, scale: 0.5 }
     }}
     >
-      {projects.map((project) => (
-        <Tilt options={tiltOptions} className={styles.card}>
+      {projects.map((project, idx) => (
+        <Tilt options={tiltOptions} className={styles.card} key={idx}>
           <img src={project.img} alt={project.title} />
           <h2>
             {project.title}
