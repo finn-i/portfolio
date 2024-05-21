@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About';
 import Experience from './components/Experience';
+import Contact from './components/Contact';
 
 const Root = () => {
 
@@ -15,10 +16,8 @@ const Root = () => {
       <ReactFullpage
         licenseKey={"gplv3-license"}
         anchors={["home", "about", "exp", "contact"]}
-        navigation // shows navigation circles
+        navigation
         scrollingSpeed={700}
-        dragAndMove={"vertical"}
-        touchSensitivity={15}
         keyboardScrolling={true}
         credits={{ enabled: true }}
         scrollBar={true}
@@ -35,7 +34,7 @@ const Root = () => {
                 <Experience />
               </div>
               <div className={`section ${styles.section}`}>
-                {/* <Contact /> */}
+                <Contact />
               </div>
             </ReactFullpage.Wrapper>
           );
