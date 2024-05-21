@@ -1,8 +1,11 @@
+a {
+  text-decoration: none;
+}
+
 .navContainer {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
-  gap: 2rem;
   height: 5vh;
   width: 100%;
   z-index: 10;
@@ -11,10 +14,16 @@
   color: "#F0EDCC";
   position: fixed;
   top: 0;
-  a {
-    text-decoration: none;
-  }
 } 
+
+.navItems {
+  display: flex;
+  gap: 2rem;
+  padding-right: 4rem;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
 
 .navTitle {
   font-family: 'Ojuju', sans-serif;
@@ -31,4 +40,34 @@
 
 .navItem:hover {
   border-bottom: 1px solid #F0EDCC;
+}
+
+.navMenuButton {
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    z-index: 102;
+  }
+}
+
+.mobileMenu {
+  z-index: 101;
+  width: 65vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  gap: 1rem;
+  background-color: #070e0d;
+  padding-top: 4rem;
+}
+
+.mobileMenuItem {
+  font-size: 1.5rem;
+  list-style-type: none;
+  padding-left: 1rem;
 }
