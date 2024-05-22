@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from 'framer-motion';
+import {motionIconHover, motionIconHoverScale} from '../assets/data';
+import Icon from "./globals/Icon";
 
 const Experience = () => {
 
@@ -30,10 +32,10 @@ const Experience = () => {
           <h2>
             {project.title}
             {project.link && 
-              <a href={project.link} target="_blank"><FontAwesomeIcon icon={faLink} /></a>
+              <Icon icon={faLink} target="_blank" href={project.link} size={"sm"} />
             }
             {project.github && 
-              <a href={project.github} target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+              <Icon icon={faGithub} target="_blank" href={project.github} size={"sm"} />
             }
           </h2>
           <p>{project.description}</p>

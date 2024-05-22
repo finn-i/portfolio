@@ -47,3 +47,13 @@ export const theme = {
   secondary: "#F0EDCC",
   accent: "rgb(250, 0, 150)"
 }
+
+export const motionIconHover = {
+  type: "spring", 
+  stiffness: 500, 
+  damping: 10
+};
+
+export const motionIconHoverScale = {
+  scale: 1.2
+}
