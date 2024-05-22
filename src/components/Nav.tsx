@@ -3,6 +3,7 @@ import styles from '../styles/nav.module.css';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { motion, useCycle } from 'framer-motion';
+import Deer from './globals/Deer';
 
 const Nav = () => {
 
@@ -59,6 +60,7 @@ const Nav = () => {
 
   return (
     <div className={styles.navContainer}>
+      <Deer />
       <a className={styles.navTitle} href={"#home"}>FINN</a>
       <div className={styles.navItems}>
         {navItems.map((item, idx) => {

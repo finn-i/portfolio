@@ -3,7 +3,6 @@ import styles from '../styles/scene.module.css';
 import { useRef, useState } from 'react';
 import { Points, PointMaterial } from '@react-three/drei';
 import { inSphere, inBox } from 'maath/random';
-import { Euler } from 'three';
 import  { useScroll } from 'framer-motion';
 import { theme } from '../assets/data';
 
