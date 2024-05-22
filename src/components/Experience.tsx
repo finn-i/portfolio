@@ -1,11 +1,9 @@
 import { Tilt } from "react-tilt";
 import styles from "../styles/experience.module.css";
 import { projects } from "../assets/data";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from 'framer-motion';
-import {motionIconHover, motionIconHoverScale} from '../assets/data';
 import Icon from "./globals/Icon";
 
 const Experience = () => {
@@ -17,14 +15,14 @@ const Experience = () => {
 
   return (
     <motion.div
-    className={styles.cardContainer}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: false }}
-    variants={{
-      visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
-      hidden: { opacity: 0, scale: 0.5 }
-    }}
+      className={styles.cardContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      variants={{
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+        hidden: { opacity: 0, scale: 0.5 }
+      }}
     >
       {projects.map((project, idx) => (
         <Tilt options={tiltOptions} className={styles.card} key={idx}>

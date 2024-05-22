@@ -5,14 +5,20 @@ import { Points, PointMaterial } from '@react-three/drei';
 import { inSphere, inBox } from 'maath/random';
 import  { useScroll } from 'framer-motion';
 import { theme } from '../assets/data';
+import { motion } from 'framer-motion';
 
 const Scene = () => {
   return (
-    <div className={styles.canvasContainer}>
+    <motion.div 
+      className={styles.canvasContainer}
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      transition={{ duration: 1, delay: 0.5 }} 
+    >
       <Canvas camera={{position: [0, 0, 1] }}>
         <Stars /> 
       </Canvas>
-    </div>
+    </motion.div>
   )
 }
 

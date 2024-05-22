@@ -21,6 +21,7 @@ const Root = () => {
         keyboardScrolling={true}
         credits={{ enabled: true }}
         scrollBar={true}
+        normalScrollElements={".cardContainer"}
         render={({  }) => {
           return (
             <ReactFullpage.Wrapper>
