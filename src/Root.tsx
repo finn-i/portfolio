@@ -6,14 +6,17 @@ import Home from './components/Home';
 import About from './components/About';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import { useRef } from 'react';
 
 const Root = () => {
+  const rfpRef = useRef<any>(null);
 
   return (
     <div className={styles.main}>
-      <Nav />
+      <Nav rfpRef={rfpRef} />
       <Scene />
       <ReactFullpage
+        ref={rfpRef}
         licenseKey={"gplv3-license"}
         anchors={["home", "about", "exp", "contact"]}
         navigation

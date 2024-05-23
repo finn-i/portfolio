@@ -4,14 +4,14 @@ a {
 
 .navContainer {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
-  height: 55vh;
+  height: 4vh;
+  min-height: 4vh;
   width: 100%;
   z-index: 10;
   backdrop-filter: blur(3px);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 6px;
-  color: "#F0EDCC";
   position: fixed;
   top: 0;
 } 
@@ -30,7 +30,7 @@ a {
   font-weight: 500;
   font-size: 2rem;
   position: absolute;
-  left: 1rem;
+  left: 6rem;
 }
 
 .navItem {
@@ -82,4 +82,9 @@ a {
 .mobileMenuItem:hover {
   background-color: #F0EDCC;
   color: #070e0d;
+}
+
+.troutCanvas {
+  width: 7rem !important;
+  margin-left: 0.5rem;
 }
