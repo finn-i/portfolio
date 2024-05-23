@@ -13,7 +13,7 @@ const Root = () => {
 
   return (
     <div className={styles.main}>
-      <Nav rfpRef={rfpRef} />
+      <Nav />
       <Scene />
       <ReactFullpage
         ref={rfpRef}
@@ -38,7 +38,7 @@ const Root = () => {
                 <Experience />
               </div>
               <div className={`section ${styles.section}`}>
-                <Contact />
+                <Contact rfpRef={rfpRef} />
               </div>
             </ReactFullpage.Wrapper>
           );

@@ -29,8 +29,8 @@ a {
   font-family: 'Ojuju', sans-serif;
   font-weight: 500;
   font-size: 2rem;
-  position: absolute;
-  left: 6rem;
+  /* position: absolute; */
+  /* left: 6rem; */
 }
 
 .navItem {
@@ -82,9 +82,4 @@ a {
 .mobileMenuItem:hover {
   background-color: #F0EDCC;
   color: #070e0d;
-}
-
-.troutCanvas {
-  width: 7rem !important;
-  margin-left: 0.5rem;
 }

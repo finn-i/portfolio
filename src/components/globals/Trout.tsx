@@ -1,13 +1,9 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations, OrbitControls, Resize, Center } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
-import styles from "../../styles/nav.module.css";
+import styles from "../../styles/contact.module.css";
 
-type ModelProps = {
-  rfpRef: any
-}
-
-const Model: React.FC<ModelProps> = ({ rfpRef }) => {
+const Model = () => {
   const group = useRef<any>(null);
   const { nodes, materials, scene, animations } = useGLTF('scene.glb');
   const { actions } = useAnimations(animations, group);
@@ -25,6 +21,12 @@ const Model: React.FC<ModelProps> = ({ rfpRef }) => {
     else group.current.scale.set(1, 1, 1)
   }, [hovered]);
 
+  useFrame(() => {
+    if (hovered) {
+      // group.current.rotation.set(group.current.rotation.x, group.current.rotation.y, group.current.rotation.z + 0.01)  
+    }
+  })
+
   // useEffect(() => {
   //   scene.traverse((node) => {
   //     if ((node as Mesh).isMesh) {
@@ -40,7 +42,7 @@ const Model: React.FC<ModelProps> = ({ rfpRef }) => {
       onPointerEnter={()=>{setHovered(true)}}
       onPointerLeave={()=>{setHovered(false)}}
       onClick={() => {
-        rfpRef.current.fullpageApi.moveTo("home");
+        // rfpRef.current.fullpageApi.moveTo("home");
       }}
     >
       <primitive object={scene} />
@@ -48,13 +50,13 @@ const Model: React.FC<ModelProps> = ({ rfpRef }) => {
 );
 }
 
-const Trout: React.FC<ModelProps> = ( {rfpRef}) => {
+const Trout = () => {
   return (
     <Canvas camera={{ fov: 50, position: [-133, 20, 60] }} className={styles.troutCanvas} >
       <ambientLight intensity={1} />
       <directionalLight position={[-2, 5, 0]} intensity={20} color={"rgb(20, 20, 255)"} />
       <directionalLight position={[-2, 5, 0]} intensity={9} />
-      <Model rfpRef={rfpRef} />
+      <Model />
       {/* <OrbitControls enableDamping={false} /> */}
     </Canvas>
   );

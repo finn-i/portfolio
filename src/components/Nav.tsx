@@ -2,13 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/nav.module.css';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { motion, useCycle } from 'framer-motion';
-import Trout from './globals/Trout';
 
-type NavProps = {
-  rfpRef: any
-}
-
-const Nav: React.FC<NavProps> = ({ rfpRef }) => {
+const Nav = () => {
 
   const [menuOpen, toggleMenuOpen] = useCycle(false, true);
 
@@ -63,8 +58,7 @@ const Nav: React.FC<NavProps> = ({ rfpRef }) => {
 
   return (
     <div className={styles.navContainer}>
-      <Trout rfpRef={rfpRef} />
-      {/* <a className={styles.navTitle} href={"#home"}>FINN</a> */}
+      <a className={styles.navTitle} href={"#home"}>FINN</a>
       <div className={styles.navItems}>
         {navItems.map((item, idx) => {
           return <a className={styles.navItem} href={item.href} key={idx}>{item.name}</a>
