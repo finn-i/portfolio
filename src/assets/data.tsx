@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     title: "NZ Outdoor Maps",
-    description: "Map viewer web app integrating data and layers from ARCGIS and DoC to visualise geographical features.",
+    description: "Web app using ARCGIS layers to visualise geographical features.",
     link: "https://tramping-maps.vercel.app",
     github: "https://github.com/finn-i/tramping-maps",
     img: "./src/assets/doc.png",
@@ -29,14 +29,14 @@ export const projects = [
   },
   {
     title: "MSc, Computer Science",
-    description: "Master of Science at The University of Waikato, investigating the retention of human edits in diarisation output combination.",
+    description: "Thesis investigating the retention of edits in diarisation output combination.",
     github: "https://github.com/finn-i/dover-lock",
     img: "./src/assets/uow.png",
     stack: ["LaTeX"]
   },
   {
-    title: "Diploma of Digital Photography",
-    description: "Developed practical and professional photography skills at The Southern Institute of Technology.",
+    title: "Dip, Digital Photography",
+    description: "Developed practical and professional photography skills at SIT.",
     img: "./src/assets/sit.png",
     stack: ["adobe suite"]
   },
@@ -45,7 +45,7 @@ export const projects = [
 export const theme = {
   primary: "#0C1817",
   secondary: "#F0EDCC",
-  accent: "rgb(250, 0, 150)"
+  accent: "#B13533"
 }
 
 export const motionIconHover = {

@@ -1,9 +1,9 @@
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import styles from '../styles/scene.module.css';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Points, PointMaterial } from '@react-three/drei';
 import { inSphere, inBox } from 'maath/random';
-import  { useScroll } from 'framer-motion';
+import  { useMotionValueEvent, useScroll } from 'framer-motion';
 import { theme } from '../assets/data';
 import { motion } from 'framer-motion';
 
@@ -25,14 +25,23 @@ const Scene = () => {
 const Stars = () =>  {
 
   const ref = useRef<any>(null);
-  const [sphere] = useState<any>(() => new Float32Array(inSphere(new Float64Array(3000), { radius: 0.125 })));
-  const [sphere2] = useState<any>(() => new Float32Array(inSphere(new Float64Array(3000), { radius: 0.2 })));
+  const pref = useRef<any>(null);
+  const [sphere] = useState<any>(() => new Float32Array(inSphere(new Float64Array(3000), { radius: 0.5 })));
+  // const [sphere2] = useState<any>(() => new Float32Array(inSphere(new Float64Array(3000), { radius: 0.2 })));
   const { scrollYProgress } = useScroll();
 
-  const ROTATION_DELTA = 0.0004;
+  const ROTATION_DELTA = 0.0002;
   const ROTATION_SCROLL_SPEED = 1.2;
-  const CAMERA_X_OFFSET = 0.5;
-  const CAMERA_Y_OFFSET = 0.5;
+  const CAMERA_X_OFFSET = 1.2;
+  const CAMERA_Y_OFFSET = 1.5;
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > 0) {
+        pref.current.color.set(theme.accent);
+      } else {
+        pref.current.color.set(theme.secondary);
+      }
+  })
 
   useFrame(({ camera }) => {
     const scrollProgress = scrollYProgress.get();
@@ -42,22 +51,21 @@ const Stars = () =>  {
       rotationAngle + ROTATION_DELTA,
       ref.current.rotation.y + ROTATION_DELTA, 
       ref.current.rotation.z - ROTATION_DELTA, 
-      
     );
 
     camera.position.x = 0 - scrollProgress * CAMERA_X_OFFSET;
     camera.position.y = 0 + scrollProgress * CAMERA_Y_OFFSET;
-    camera.position.z = 1 - scrollProgress * 1.8;
+    camera.position.z = 1 - scrollProgress * 1.2;
   });
 
   return (
     <group ref={ref}>
       <Points positions={sphere} stride={3} frustumCulled={false} >
-        <PointMaterial transparent color={theme.accent} size={0.0015} sizeAttenuation={true} depthWrite={false} />
+        <PointMaterial ref={pref} transparent size={0.002} sizeAttenuation={true} depthWrite={false} />
       </Points>
-      <Points positions={sphere2} stride={3} frustumCulled={false} >
-        <PointMaterial transparent color={"rgb(30, 100, 30)"} size={0.002} sizeAttenuation={true} depthWrite={false} />
-      </Points>
+      {/* <Points positions={sphere2} stride={3} frustumCulled={false} >
+        <PointMaterial transparent color={"rgb(50, 50, 20)"} size={0.002} sizeAttenuation={true} depthWrite={false} />
+      </Points> */}
     </group>
   )
 }

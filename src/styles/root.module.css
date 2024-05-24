@@ -6,6 +6,7 @@
   color-scheme: light dark;
   color: #F0EDCC;
   background-color: #0c1817;
+  background-color: #070e0d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,10 +35,12 @@ body, html {
 }
 
 .title {
-  font-family: 'Ojuju', sans-serif;
+  /* font-family: 'Ojuju', sans-serif; */
+  font-family: "Bungee Shade", sans-serif;
+  color: #B13533;
   font-size: 6rem;
   font-weight: 700;
-  padding-bottom: 5vh;
+  padding-bottom: 10vh;
   text-align: center;
   margin: 10rem;
 }
@@ -45,16 +48,24 @@ body, html {
 .overview {
   width: 30rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   h1 {
     font-size: 3rem;
     margin-bottom: 0;
+    color: #B13533;
   }
   p {
     font-size: 1.1rem;
     text-align: center;
+  }
+  .avatar {
+    width: 15rem;
+    margin-bottom: 2rem;
+    border: 1px solid #F0EDCC;
+    border-radius: 8%;
+    filter: grayscale(1)
   }
 }

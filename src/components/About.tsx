@@ -14,7 +14,8 @@ const About = () => {
         hidden: { opacity: 0, scale: 0.5 }
       }}
     >
-      <h1>Overview</h1>
+      {/* <h1>Overview</h1> */}
+      <img src={"./src/assets/avatar.PNG"} alt="finn" className={styles.avatar} />
       <p>I'm a software developer with experience in front-end web development and digital libraries, based in NZ</p>
     </motion.div>
   )
