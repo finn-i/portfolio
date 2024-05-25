@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import styles from "../styles/root.module.css";
+import styles from "../styles/about.module.css";
 
-const About = () => {
+type NavProps = {
+  rfpRef: any
+}
+
+const About: React.FC<NavProps> = ({ rfpRef }) => {
 
   return (
     <motion.div 
@@ -14,9 +18,18 @@ const About = () => {
         hidden: { opacity: 0, scale: 0.5 }
       }}
     >
-      {/* <h1>Overview</h1> */}
-      <img src={"./src/assets/avatar.PNG"} alt="finn" className={styles.avatar} />
-      <p>I'm a software developer with experience in front-end web development and digital libraries, based in NZ</p>
+      <div className={styles.avatarContainer}>
+        <img src={"./src/assets/avatar.PNG"} alt="finn" className={styles.avatar} />
+        <p>Finn Innes</p>
+        <p>NZL</p>
+      </div>
+      <motion.div className={styles.aboutContent}>
+        <h2>About Me</h2>
+        <p>A recent MSc graduate and software developer with experience in front-end web development and digital libraries.</p>
+        <div className={styles.button} onClick={()=>console.log(rfpRef.current.fullpageApi.moveTo("exp"))}>
+          View Experience
+        </div>
+      </motion.div>
     </motion.div>
   )
 }
