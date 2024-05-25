@@ -1,11 +1,10 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
 
   color-scheme: light dark;
   color: #F0EDCC;
-  background-color: #0c1817;
   background-color: #070e0d;
 
   font-synthesis: none;
@@ -43,29 +42,4 @@ body, html {
   padding-bottom: 10vh;
   text-align: center;
   margin: 10rem;
-}
-
-.overview {
-  width: 30rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5rem;
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0;
-    color: #B13533;
-  }
-  p {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  .avatar {
-    width: 15rem;
-    margin-bottom: 2rem;
-    border: 1px solid #F0EDCC;
-    border-radius: 8%;
-    filter: grayscale(1)
-  }
 }

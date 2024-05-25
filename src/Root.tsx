@@ -32,7 +32,7 @@ const Root = () => {
                 <Home />
               </div>
               <div className={`section ${styles.section}`}>
-                <About />
+                <About rfpRef={rfpRef} />
               </div>
               <div className={`section ${styles.section}`}>
                 <Experience />

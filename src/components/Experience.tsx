@@ -17,11 +17,11 @@ const Experience = () => {
 
   return (
     <>
-      <motion.div className={styles.chipContainer}>
-        {uniqueStacks.map((stack, idx) => (
-          <div key={idx} className={styles.chip}>{stack}</div>
-        ))}
-      </motion.div>
+      {/* <motion.div className={styles.chipContainer}> */}
+        {/* {uniqueStacks.map((stack, idx) => ( */}
+          {/* // <div key={idx} className={styles.chip}>{stack.toUpperCase}</div> */}
+        {/* // ))} */}
+      {/* </motion.div> */}
       <motion.div
         className={styles.cardContainer}
         initial="hidden"
