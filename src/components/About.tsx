@@ -19,7 +19,7 @@ const About: React.FC<NavProps> = ({ rfpRef }) => {
       }}
     >
       <div className={styles.avatarContainer}>
-        <img src={"./src/assets/avatar.PNG"} alt="finn" className={styles.avatar} />
+        <div><img src={"./src/assets/avatar.PNG"} alt="finn" className={styles.avatar} /></div>
         <p>Finn Innes</p>
         <p>NZL</p>
       </div>

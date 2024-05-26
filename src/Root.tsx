@@ -38,7 +38,7 @@ const Root = () => {
                 <Experience />
               </div>
               <div className={`section ${styles.section}`}>
-                <Contact rfpRef={rfpRef} />
+                <Contact />
               </div>
             </ReactFullpage.Wrapper>
           );
