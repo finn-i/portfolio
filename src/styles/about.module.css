@@ -17,12 +17,17 @@
     color: #F0EDCCAA;
     margin: 0;
   }
+  div {
+    border: 1px solid #F0EDCC;
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .avatar {
-  width: 15rem;
-  border: 1px solid #F0EDCC;
-  margin-bottom: 1rem;
+  width: 100%;
   border-radius: 50%;
   filter: grayscale(1);
 }
