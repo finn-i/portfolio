@@ -1,10 +1,10 @@
 import { Tilt } from "react-tilt";
 import styles from "../styles/experience.module.css";
 import { projects } from "../assets/data";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Link, Code } from "lucide-react";
 import { motion } from 'framer-motion';
 import Icon from "./globals/Icon";
+import Tooltip from "./globals/Tooltip";
 
 const Experience = () => {
 
@@ -13,15 +13,8 @@ const Experience = () => {
     max: 20,
   }
 
-  const uniqueStacks = [...new Set(projects.flatMap(project => project.stack))];
-
   return (
     <>
-      {/* <motion.div className={styles.chipContainer}> */}
-        {/* {uniqueStacks.map((stack, idx) => ( */}
-          {/* // <div key={idx} className={styles.chip}>{stack.toUpperCase}</div> */}
-        {/* // ))} */}
-      {/* </motion.div> */}
       <motion.div
         className={styles.cardContainer}
         initial="hidden"
@@ -34,15 +27,17 @@ const Experience = () => {
       >
         {projects.map((project, idx) => (
           <Tilt options={tiltOptions} className={styles.card} key={idx}>
+            {(project.link || project.github) && <div className={styles.links}>
+              {project.link && 
+                <Tooltip text={"View Site"}><Icon icon={Link} target="_blank" href={project.link} /></Tooltip>
+              }
+              {project.github && 
+                <Tooltip text={"View Repo"}><Icon icon={Code} target="_blank" href={project.github} /></Tooltip>
+              }
+            </div>}
             <img src={project.img} alt={project.title} />
             <h2>
               {project.title}
-              {project.link && 
-                <Icon icon={faLink} target="_blank" href={project.link} size={"sm"} />
-              }
-              {project.github && 
-                <Icon icon={faGithub} target="_blank" href={project.github} size={"sm"} />
-              }
             </h2>
             <p>{project.description}</p>
             <div className={styles.stackContainer}>

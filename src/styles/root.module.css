@@ -34,7 +34,6 @@ body, html {
 }
 
 .title {
-  /* font-family: 'Ojuju', sans-serif; */
   font-family: "Bungee Shade", sans-serif;
   color: #B13533;
   font-size: 6rem;
@@ -42,4 +41,28 @@ body, html {
   padding-bottom: 10vh;
   text-align: center;
   margin: 10rem;
+}
+
+.iconDiv {
+  cursor: pointer;
+}
+
+.tooltipContainer {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  margin-top: 2rem;
+  border-radius: 3px;
+  z-index: 1000;
+  white-space: nowrap;
+  left: 50%; /* left edge aligns with center of parent */
+  transform: translateX(-50%); /* tooltip moves left by 50% of its width */
+  font-size: 0.8rem;
 }
