@@ -1,15 +1,10 @@
 import styles from '../styles/contact.module.css';
-import { faAt } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Icon from './globals/Icon';
 import Trout from './globals/Trout';
 
-type NavProps = {
-  rfpRef: any
-}
-
-const Contact: React.FC<NavProps> = ({ rfpRef }) => {
+const Contact = () => {
 
   return (
     <div>
@@ -22,13 +17,13 @@ const Contact: React.FC<NavProps> = ({ rfpRef }) => {
           visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
           hidden: { opacity: 0, scale: 0.5 }
         }}
-        >
+      >
         <h1>Contact</h1>
         <p>Drop me an email or message me on my socials</p>
         <div className={styles.socialContainer}>
-          <Icon icon={faAt} target="_blank" href={"mailto:finn123890@gmail.com"} size={"2xl"} />
-          <Icon icon={faLinkedin} target="_blank" href={"https://www.linkedin.com/in/finn-innes/"} size={"2xl"} />
-          <Icon icon={faGithub} target="_blank" href={"https://github.com/finn-i"} size={"2xl"} />
+          <Icon icon={Mail} target="_blank" href={"mailto:finn123890@gmail.com"} />
+          <Icon icon={Linkedin} target="_blank" href={"https://www.linkedin.com/in/finn-innes/"} />
+          <Icon icon={Github} target="_blank" href={"https://github.com/finn-i"} />
         </div>
       </motion.div>
       <Trout />

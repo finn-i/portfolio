@@ -1,20 +1,33 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { motionIconHover, motionIconHoverScale } from "../../assets/data";
-import { IconProp, SizeProp } from "@fortawesome/fontawesome-svg-core";
+import { LucideIcon } from "lucide-react";
+import styles from "../../styles/root.module.css";
 
 type IconProps = {
-  icon: IconProp,
-  target: string,
-  href: string,
-  size: SizeProp  
+  icon: LucideIcon,
+  target?: string,
+  href?: string,
+  size?: number,
+  color?: string  
 }
 
-const Icon: React.FC<IconProps> = ({ icon, target, href, size }) => {
+const Icon: React.FC<IconProps> = ({ icon: LucideIcon, target, href, size=26, color="#F0EDCC" }) => {
+
+  const transition = {
+    type: "spring", 
+    stiffness: 500, 
+    damping: 10
+  };
+
   return (
-    <motion.a whileHover={motionIconHoverScale} transition={motionIconHover} target={target} href={href}>
-      <FontAwesomeIcon icon={icon} size={size} />
-    </motion.a>
+    <motion.div 
+      className={styles.iconDiv}
+      whileHover={{ scale: 1.2 }} 
+      whileTap={{ scale: 0.9 }}
+      transition={transition} 
+      onClick={()=>window.open(href, target)}
+    >
+      <LucideIcon size={size} color={color} />
+    </motion.div>
   );
 }
 

@@ -1,6 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Menu } from 'lucide-react';
 import styles from '../styles/nav.module.css';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { motion, useCycle } from 'framer-motion';
 
 const Nav = () => {
@@ -64,7 +63,7 @@ const Nav = () => {
           return <a className={styles.navItem} href={item.href} key={idx}>{item.name}</a>
         })}
       </div>
-      <FontAwesomeIcon className={styles.navMenuButton} icon={faBars} size={"2x"} onClick={() => toggleMenuOpen()} />
+      <Menu className={styles.navMenuButton} size={32} onClick={() => toggleMenuOpen()} />
       <motion.nav className={styles.mobileMenu} initial={false} animate={menuOpen ? "open" : "closed"} variants={navVariant}>
         {navItems.map((item, idx) => {
           return <motion.a href={item.href} onClick={()=>toggleMenuOpen()} variants={variants2} className={styles.mobileMenuItem} key={idx}>{item.name}</motion.a>
