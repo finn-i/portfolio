@@ -1,7 +1,7 @@
 import { Tilt } from "react-tilt";
 import styles from "../styles/experience.module.css";
 import { projects } from "../assets/data";
-import { Link, Code } from "lucide-react";
+import { Link, Code, Library, Github, Presentation } from "lucide-react";
 import { motion } from 'framer-motion';
 import Icon from "./globals/Icon";
 import Tooltip from "./globals/Tooltip";
@@ -26,25 +26,26 @@ const Experience = () => {
         }}
       >
         {projects.map((project, idx) => (
-          <Tilt options={tiltOptions} className={styles.card} key={idx}>
-            {(project.link || project.github) && <div className={styles.links}>
-              {project.link && 
-                <Tooltip text={"View Site"}><Icon icon={Link} target="_blank" href={project.link} /></Tooltip>
-              }
-              {project.github && 
-                <Tooltip text={"View Repo"}><Icon icon={Code} target="_blank" href={project.github} /></Tooltip>
-              }
-            </div>}
-            <img src={project.img} alt={project.title} />
+          <Tilt options={tiltOptions} className={styles.card} key={idx} style={{zIndex: 10-idx}}>
+            {project.icon}
+            {/* <img src={project.img} alt={project.title} /> */}
             <h2>
               {project.title}
             </h2>
-            <p>{project.description}</p>
             <div className={styles.stackContainer}>
               {project.stack.map((stack, idx) => {
                 return <div key={idx} className={styles.chip}>{stack}</div>;
               })}
             </div>
+            <p>{project.description}</p>
+            {(project.link || project.github) && <div className={styles.links}>
+              {project.link && 
+                <a className={styles.button} target="_blank" href={project.link}><Presentation size={16}/>Project</a>
+              }
+              {project.github && 
+                <a className={styles.button} target="_blank" href={project.github}><Github size={16}/>Repo</a>
+              }
+            </div>}
           </Tilt>
         ))}
       </motion.div>
