@@ -1,10 +1,8 @@
 import { Tilt } from "react-tilt";
 import styles from "../styles/experience.module.css";
 import { projects } from "../assets/data";
-import { Link, Code, Library, Github, Presentation } from "lucide-react";
+import { Github, Presentation } from "lucide-react";
 import { motion } from 'framer-motion';
-import Icon from "./globals/Icon";
-import Tooltip from "./globals/Tooltip";
 
 const Experience = () => {
 
