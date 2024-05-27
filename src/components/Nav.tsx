@@ -63,7 +63,7 @@ const Nav = () => {
           return <a className={styles.navItem} href={item.href} key={idx}>{item.name}</a>
         })}
       </div>
-      <Menu className={styles.navMenuButton} size={32} onClick={() => toggleMenuOpen()} />
+      <div className={styles.navMenuButton} onClick={() => toggleMenuOpen()}><Menu size={32} /></div>
       <motion.nav className={styles.mobileMenu} initial={false} animate={menuOpen ? "open" : "closed"} variants={navVariant}>
         {navItems.map((item, idx) => {
           return <motion.a href={item.href} onClick={()=>toggleMenuOpen()} variants={variants2} className={styles.mobileMenuItem} key={idx}>{item.name}</motion.a>
