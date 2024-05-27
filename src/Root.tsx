@@ -23,15 +23,15 @@ const Root = () => {
         scrollingSpeed={700}
         keyboardScrolling={true}
         credits={{ enabled: true }}
-        scrollBar={true}
+        // scrollBar={true}
         normalScrollElements={".cardContainer"}
         render={({  }) => {
           return (
             <ReactFullpage.Wrapper>
-              <div className={`section ${styles.section}`}>
+              <div className={`section ${styles.section}`} id={"homeSection"}>
                 <Home />
               </div>
-              <div className={`section ${styles.section}`}>
+              <div className={`section ${styles.section}`} id={"aboutSection"}>
                 <About rfpRef={rfpRef} />
               </div>
               <div className={`section ${styles.section}`}>

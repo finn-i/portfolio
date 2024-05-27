@@ -1,10 +1,8 @@
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import styles from '../styles/scene.module.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Points, PointMaterial } from '@react-three/drei';
-import { inSphere, inBox } from 'maath/random';
-import  { useMotionValueEvent, useScroll } from 'framer-motion';
-import { theme } from '../assets/data';
+import { inSphere } from 'maath/random';
 import { motion } from 'framer-motion';
 
 const Scene = () => {
@@ -26,36 +24,32 @@ const Stars = () =>  {
 
   const ref = useRef<any>(null);
   const pref = useRef<any>(null);
-  const [sphere] = useState<any>(() => new Float32Array(inSphere(new Float64Array(3000), { radius: 0.5 })));
-  // const [sphere2] = useState<any>(() => new Float32Array(inSphere(new Float64Array(3000), { radius: 0.2 })));
-  const { scrollYProgress } = useScroll();
+  const [sphere] = useState<any>(() => new Float32Array(inSphere(new Float64Array(3000), { radius: 0.4 })));
+  let scrollY = 0;
+  const homeSection = document.getElementById("homeSection");
 
   const ROTATION_DELTA = 0.0002;
-  const ROTATION_SCROLL_SPEED = 1.2;
-  const CAMERA_X_OFFSET = 1.2;
-  const CAMERA_Y_OFFSET = 1.5;
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > 0) {
-        pref.current.color.set(theme.accent);
-      } else {
-        pref.current.color.set(theme.secondary);
-      }
-  })
+  const ROTATION_SCROLL_SPEED = 0.5;
+  const CAMERA_X_OFFSET = 0.3;
+  const CAMERA_Y_OFFSET = 0.5;
 
   useFrame(({ camera }) => {
-    const scrollProgress = scrollYProgress.get();
-    const rotationAngle = Math.PI * (scrollProgress * ROTATION_SCROLL_SPEED);
+
+    if (homeSection) {
+      scrollY = 0 - (homeSection.getBoundingClientRect().top) / homeSection.clientHeight;
+    }
+    
+    const rotationAngle = Math.PI * (scrollY * ROTATION_SCROLL_SPEED);
     
     ref.current.rotation.set(
+      ref.current.rotation.x + ROTATION_DELTA, 
       rotationAngle + ROTATION_DELTA,
-      ref.current.rotation.y + ROTATION_DELTA, 
-      ref.current.rotation.z - ROTATION_DELTA, 
+      ref.current.rotation.z + ROTATION_DELTA, 
     );
 
-    camera.position.x = 0 - scrollProgress * CAMERA_X_OFFSET;
-    camera.position.y = 0 + scrollProgress * CAMERA_Y_OFFSET;
-    camera.position.z = 1 - scrollProgress * 1.2;
+    camera.position.x = 0 - scrollY * CAMERA_X_OFFSET;
+    camera.position.y = 0 + scrollY * CAMERA_Y_OFFSET;
+    camera.position.z = 1 - scrollY * 0.5;
   });
 
   return (
@@ -63,9 +57,6 @@ const Stars = () =>  {
       <Points positions={sphere} stride={3} frustumCulled={false} >
         <PointMaterial ref={pref} transparent size={0.002} sizeAttenuation={true} depthWrite={false} />
       </Points>
-      {/* <Points positions={sphere2} stride={3} frustumCulled={false} >
-        <PointMaterial transparent color={"rgb(50, 50, 20)"} size={0.002} sizeAttenuation={true} depthWrite={false} />
-      </Points> */}
     </group>
   )
 }
