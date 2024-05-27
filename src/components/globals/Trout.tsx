@@ -1,11 +1,11 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, useAnimations, OrbitControls, Resize, Center } from "@react-three/drei";
+import { useGLTF, useAnimations } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/contact.module.css";
 
 const Model = () => {
   const group = useRef<any>(null);
-  const { nodes, materials, scene, animations } = useGLTF('scene.glb');
+  const { scene, animations } = useGLTF('scene.glb');
   const { actions } = useAnimations(animations, group);
   const [hovered, setHovered] = useState(false)
 

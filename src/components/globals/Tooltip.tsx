@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import styles from "../../styles/root.module.css";
 import { motion } from "framer-motion";
 
