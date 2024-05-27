@@ -43,8 +43,8 @@ const Stars = () =>  {
     
     ref.current.rotation.set(
       ref.current.rotation.x + ROTATION_DELTA, 
+      ref.current.rotation.y + ROTATION_DELTA, 
       rotationAngle + ROTATION_DELTA,
-      ref.current.rotation.z + ROTATION_DELTA, 
     );
 
     camera.position.x = 0 - scrollY * CAMERA_X_OFFSET;

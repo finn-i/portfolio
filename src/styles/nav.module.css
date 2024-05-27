@@ -14,32 +14,47 @@ a {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 6px;
   position: fixed;
   top: 0;
+  overflow: hidden;
 } 
 
 .navItems {
   display: flex;
   gap: 2rem;
-  padding-right: 4rem;
+  padding-right: 2rem;
   @media screen and (max-width: 600px) {
     display: none;
   }
 }
 
 .navTitle {
-  font-family: 'Ojuju', sans-serif;
-  font-weight: 500;
-  font-size: 2rem;
-  /* position: absolute; */
-  /* left: 6rem; */
+  font-family: "Bungee Shade", sans-serif;
+  color: #00ADB5;
+  font-size: 3rem;
+  padding-left: 0.5rem;
+  transition: 0.1s ease-in-out;
+}
+
+.navTitle:hover {
+  scale: 1.1;
+}
+
+.navTitle:active {
+  scale: 0.9;
 }
 
 .navItem {
   font-size: 1.1rem;
   border-bottom: 1px solid transparent;
+  transition: 0.1s ease-in-out;
 }
 
 .navItem:hover {
+  scale: 1.1;
   border-bottom: 1px solid #F0EDCC;
+}
+
+.navItem:active {
+  scale: 0.9;
 }
 
 .navMenuButton {
@@ -76,7 +91,6 @@ a {
   padding: 0.5rem 2rem;
   margin: 0;
   width: 100%;
-  
 }
 
 .mobileMenuItem:hover {

@@ -57,7 +57,7 @@ const Nav = () => {
 
   return (
     <div className={styles.navContainer}>
-      <a className={styles.navTitle} href={"#home"}>FINN</a>
+      <a className={styles.navTitle} href={"#home"}>F</a>
       <div className={styles.navItems}>
         {navItems.map((item, idx) => {
           return <a className={styles.navItem} href={item.href} key={idx}>{item.name}</a>

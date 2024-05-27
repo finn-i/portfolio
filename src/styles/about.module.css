@@ -68,3 +68,7 @@
   background-color: #F0EDCC;
   scale: 1.1;
 }
+
+.button:active {
+  scale: 0.9;
+}
