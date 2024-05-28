@@ -10,6 +10,14 @@
   @media screen and (max-width: 900px) {
     gap: 3rem;
   }
+  @media screen and (max-width: 600px) {
+    gap: 1rem;
+    flex-direction: column;
+    .avatarContainer div {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
 }
 
 .avatarContainer {
@@ -27,6 +35,7 @@
     width: 15rem;
     height: 15rem;
     margin-bottom: 1rem;
+    transition: 0.1s ease-in-out;
   }
 }
 

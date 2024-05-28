@@ -45,6 +45,10 @@ a {
   padding-bottom: 10vh;
   text-align: center;
   margin: 10rem;
+  transition: font-size 0.1s ease-in-out;
+  @media screen and (max-width: 600px) {
+    font-size: 4rem;
+  }
 }
 
 .iconDiv {
