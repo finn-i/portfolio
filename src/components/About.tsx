@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import styles from "../styles/about.module.css";
-import ReactS3Client from "react-aws-s3-typescript";
-import { useState } from "react";
 
 type NavProps = {
   rfpRef: any
@@ -9,7 +7,7 @@ type NavProps = {
 
 const About: React.FC<NavProps> = ({ rfpRef }) => {
 
-  const [avatarURL, setAvatarURL] = useState("https://s3bucketportfolio.s3.ap-southeast-2.amazonaws.com/avatar.PNG");
+  const avatarURL = "https://s3bucketportfolio.s3.ap-southeast-2.amazonaws.com/avatar.PNG";
 
   return (
     <motion.div 
