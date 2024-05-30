@@ -73,7 +73,7 @@ a {
 .mobileMenu {
   z-index: 101;
   width: 65vw;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   position: absolute;
