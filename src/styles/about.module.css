@@ -6,12 +6,11 @@
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  margin-bottom: 5rem;
   @media screen and (max-width: 900px) {
     gap: 3rem;
   }
   @media screen and (max-width: 600px) {
-    gap: 1rem;
+    gap: 0rem;
     flex-direction: column;
     .avatarContainer div {
       width: 10rem;
@@ -53,11 +52,13 @@
     font-size: 3rem;
     font-weight: 600;
     color: #00ADB5;
-    padding-bottom: none;
+    margin-bottom: 0;
+    margin-top: 1rem;
   }
   p {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
   }
 }
 

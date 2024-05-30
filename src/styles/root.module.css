@@ -48,6 +48,8 @@ a {
   transition: font-size 0.1s ease-in-out;
   @media screen and (max-width: 600px) {
     font-size: 4rem;
+    padding-bottom: 0vh;
+    padding-top: 5vh;
   }
 }
 
