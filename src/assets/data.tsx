@@ -40,7 +40,7 @@ export const projects = [
     github: "https://github.com/finn-i/dover-lock",
     img: "./src/assets/uow.png",
     icon: <GraduationCap />,
-    stack: ["LaTeX"]
+    stack: ["latex"]
   },
   {
     title: "Dip, Digital Photography",
