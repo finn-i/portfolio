@@ -1,6 +1,6 @@
 .canvasContainer {
   width: 100vw;
-  height: 100vh;
-  position: fixed;
+  height: 100svh;
+  position: absolute;
   top: 0;
 }

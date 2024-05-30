@@ -28,12 +28,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 .section {
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   align-items: center;
 }
 
@@ -42,7 +42,7 @@ a {
   color: #00ADB5;
   font-size: 6rem;
   font-weight: 700;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
   text-align: center;
   margin: 10rem;
   transition: font-size 0.1s ease-in-out;

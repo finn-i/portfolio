@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div>
       <motion.div
-        className={styles.cardContainer}
+        className={styles.contactContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false }}

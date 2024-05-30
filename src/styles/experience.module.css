@@ -25,6 +25,11 @@
     z-index: -1;
     opacity: 0.1;
   }  
+  h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+  }
   p {
     flex-grow: 2;
     margin-bottom: 0;
@@ -62,12 +67,6 @@
 
 .button:active {
   scale: 0.9;
-}
-
-h2 {
-  margin: 0;
-  font-size: 1.3rem;
-  text-align: center;
 }
 
 .stackContainer {
